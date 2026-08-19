@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+
+</head>
+
+<body>
+    <form>
+        <h2> Registration </h2>
+        <input type="text" placeholder="Name" required> <br><br>
+        <input id="Email" type="text" placeholder="Email" required> <br><br>
+        <input id="pass" type="text" placeholder="Password" required> <br><br>
+        <input id="Confirm_pass" type="text" placeholder="Reenterpassword" required> <br><br>
+        <input type="text" placeholder="number" required> <br><br>
+        <button> submit </button>
+        <script>
+            function validate() {
+
+                var n = document.Registration.Name.value;
+
+                if (n == "") {
+                    alert("Fill your name");
+                    return false;
+                }
+
+                var number = document.Registration.number.value;
+
+                if (number.length !== 10) {
+                    alert("Fill a valid mobile number");
+                    return false;
+                }
+
+                let Email_Input = document.getElementById('Email')
+                if(!Email_Input.includes('@') || !Email_Input.includes('.')){
+                    alert("Please Enter a valid Email Address...")
+                    return false;
+                }
+
+                let Password = document.getElementById('pass')
+                let Confirm_PassWord = document.getElementById('Confirm_pass')
+                if(Password !== Confirm_PassWord){
+                    alert("Enter a correct password")
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+</body>
+
+</html>
